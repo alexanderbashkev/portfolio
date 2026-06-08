@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oleksandr Bashkev — AI Automation & Web Infrastructure Engineer</title>
+<meta name="description" content="One engineer running the web infrastructure of a team: AI-automated multi-locale platforms, LLM content pipelines, and GEO-correct analytics." />
+<link rel="canonical" href="https://bashkev.dev/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bashkev.dev/" />
+<meta property="og:title" content="Oleksandr Bashkev — AI Automation & Web Infrastructure Engineer" />
+<meta property="og:description" content="One engineer running the web infrastructure of a team — AI-automated multi-locale platforms, LLM content pipelines, and GEO-correct analytics." />
+<meta property="og:image" content="https://bashkev.dev/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Oleksandr Bashkev — AI Automation & Web Infrastructure Engineer" />
+<meta name="twitter:description" content="One engineer running the web infrastructure of a team." />
+<meta name="twitter:image" content="https://bashkev.dev/assets/og.png" />
+<meta name="theme-color" content="#0a0b0d" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0b0d'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23ffb02e' text-anchor='middle'%3EOB%3C/text%3E%3C/svg%3E" />
+
+<!-- ============================================================= -->
+<!-- GOOGLE TAG MANAGER  -->
+<!-- Live demo of the config-driven GTM/GA4 rollout from Services.  -->
+<!-- ============================================================= -->
+<script>
+  window.SITE_CONFIG = { GTM_ID: "GTM-TPXDSKP2" }; // single source of truth
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+  f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',window.SITE_CONFIG.GTM_ID);
+</script>
+<!-- End Google Tag Manager -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- THEME TOKENS ---------- */
+  :root{
+    --ink:#0a0b0d; --ink-2:#0e1014; --panel:#14171c; --panel-2:#191d23;
+    --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.16);
+    --text:#ece9e1; --muted:#8b9099; --muted-2:#5f646d;
+    --accent:#ffb02e; --on-accent:#1a1206; --live:#5fd17a;
+    --glow:rgba(255,176,46,.14); --grid-op:.55;
+    --serif:"Fraunces",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  /* light palette: applied when user toggles OR when system prefers light & no manual choice */
+  html[data-theme="light"]{
+    --ink:#f5f2ea; --ink-2:#efebe0; --panel:#fffdf8; --panel-2:#faf6ec;
+    --line:rgba(22,24,28,.10); --line-strong:rgba(22,24,28,.20);
+    --text:#181a1e; --muted:#5b606a; --muted-2:#a2a6ad;
+    --accent:#b56b00; --on-accent:#fffaf0; --live:#1f9d4d;
+    --glow:rgba(181,107,0,.10); --grid-op:.6;
+  }
+  @media (prefers-color-scheme: light){
+    html:not([data-theme="dark"]):not([data-theme="light"]){
+      --ink:#f5f2ea; --ink-2:#efebe0; --panel:#fffdf8; --panel-2:#faf6ec;
+      --line:rgba(22,24,28,.10); --line-strong:rgba(22,24,28,.20);
+      --text:#181a1e; --muted:#5b606a; --muted-2:#a2a6ad;
+      --accent:#b56b00; --on-accent:#fffaf0; --live:#1f9d4d;
+      --glow:rgba(181,107,0,.10);
+    }
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 0%,transparent 75%);
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 0%,transparent 75%);opacity:var(--grid-op)}
+  body::after{content:"";position:fixed;top:-30%;left:50%;transform:translateX(-50%);width:90vw;height:70vh;z-index:0;pointer-events:none;
+    background:radial-gradient(circle,var(--glow),transparent 60%);filter:blur(20px)}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+
+  .tag{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .tag--muted{color:var(--muted)}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--ink) 72%,transparent);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.02em;display:flex;align-items:center;gap:9px}
+  .brand b{color:var(--accent)}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--text);border:1px solid var(--line-strong);border-radius:100px;padding:7px 14px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--live);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(95,209,122,.5)}70%{box-shadow:0 0 0 7px rgba(95,209,122,0)}100%{box-shadow:0 0 0 0 rgba(95,209,122,0)}}
+  .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line-strong);background:transparent;color:var(--text);cursor:pointer;transition:border-color .2s,color .2s}
+  .theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+  .theme-toggle svg{width:18px;height:18px}
+  .theme-toggle .ico-sun{display:none}
+  html[data-theme="light"] .theme-toggle .ico-sun{display:block}
+  html[data-theme="light"] .theme-toggle .ico-moon{display:none}
+  @media (prefers-color-scheme: light){html:not([data-theme="dark"]) .theme-toggle .ico-sun{display:block}html:not([data-theme="dark"]) .theme-toggle .ico-moon{display:none}}
+
+  /* HERO */
+  header{padding:96px 0 60px}
+  .hero-eyebrow{margin-bottom:28px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,7.2vw,84px);line-height:.99;letter-spacing:-.02em;margin-bottom:30px}
+  h1 em{font-style:italic;color:var(--accent)}
+  .lede{font-size:clamp(18px,2.1vw,21px);color:var(--muted);max-width:640px;line-height:1.55}
+  .lede strong{color:var(--text);font-weight:600}
+  .hero-cta{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap}
+  .btn{font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;padding:14px 26px;border-radius:10px;transition:transform .15s,filter .2s,border-color .2s,color .2s;display:inline-flex;align-items:center;gap:9px}
+  .btn-primary{background:var(--accent);color:var(--on-accent)}
+  .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+  .btn-ghost{color:var(--text);border:1px solid var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* SECTIONS */
+  section{padding:74px 0;position:relative}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:38px;flex-wrap:wrap}
+  .sec-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.6vw,38px);letter-spacing:-.015em}
+
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .metric{background:var(--panel);padding:30px 26px}
+  .metric .num{font-family:var(--mono);font-weight:600;font-size:clamp(30px,4vw,44px);color:var(--text);letter-spacing:-.02em}
+  .metric .num span{color:var(--accent)}
+  .metric .lbl{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+
+  .shots{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+  .shot{border:1px dashed var(--line-strong);border-radius:14px;background:var(--ink-2);min-height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted-2);text-align:center;padding:24px}
+  .shot .tag{color:var(--muted)}
+  .shot p{font-size:13px;max-width:280px}
+  .shot--img{border-style:solid;padding:0;min-height:0;gap:0;align-items:stretch;justify-content:flex-start;overflow:hidden}
+  .shot--img img{display:block;width:100%;height:auto}
+  .shot--img figcaption{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:12px 16px;border-top:1px solid var(--line);text-align:left;line-height:1.45}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px 26px;transition:border-color .25s,transform .25s,background .25s;position:relative;overflow:hidden}
+  .card:hover{border-color:var(--line-strong);transform:translateY(-4px);background:var(--panel-2)}
+  .card .idx{font-family:var(--mono);font-size:13px;color:var(--accent);margin-bottom:20px;display:block}
+  .card h3{font-family:var(--serif);font-weight:500;font-size:23px;letter-spacing:-.01em;margin-bottom:13px;line-height:1.15}
+  .card p{font-size:15px;color:var(--muted);line-height:1.6}
+  .card .kw{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
+  .kw span{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:4px 9px}
+
+  .case{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:44px;position:relative;overflow:hidden}
+  .case::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent)}
+  .case h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3vw,32px);letter-spacing:-.015em;margin:14px 0 30px;max-width:620px;line-height:1.1}
+  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .case-grid h4{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:11px}
+  .case-grid p{font-size:14.5px;color:var(--muted);line-height:1.6}
+
+  .stack{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .stack-col h4{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .stack-col ul{list-style:none}
+  .stack-col li{font-size:14.5px;color:var(--text);padding:7px 0;display:flex;align-items:flex-start;gap:9px}
+  .stack-col li::before{content:"\203A";color:var(--accent);font-family:var(--mono)}
+
+  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:50px;align-items:start}
+  .about p{font-size:17.5px;color:var(--muted);line-height:1.7;margin-bottom:18px}
+  .about p strong{color:var(--text);font-weight:600}
+  .facts{border:1px solid var(--line);border-radius:16px;background:var(--panel);overflow:hidden}
+  .facts .row{display:flex;justify-content:space-between;gap:14px;padding:15px 22px;border-bottom:1px solid var(--line);font-size:14px}
+  .facts .row:last-child{border-bottom:none}
+  .facts .k{color:var(--muted-2);font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+  .facts .v{color:var(--text);text-align:right}
+
+  .contact{text-align:center;padding:96px 0}
+  .contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,5vw,56px);letter-spacing:-.02em;line-height:1.05;margin-bottom:24px}
+  .contact h2 em{font-style:italic;color:var(--accent)}
+  .contact .lede{margin:0 auto 36px}
+  .contact-meta{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:26px}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted-2);font-size:13px;font-family:var(--mono)}
+  .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+  .foot-in a{color:var(--muted);text-decoration:none}
+  .foot-in a:hover{color:var(--accent)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1024px){.about{gap:38px}}
+  @media(max-width:900px){.cards{grid-template-columns:1fr 1fr}.stack{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:820px){.metrics{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr;gap:30px}}
+  @media(max-width:760px){.nav-links a:not(.pill){display:none}.case{padding:30px}.case-grid{grid-template-columns:1fr;gap:22px}.shots{grid-template-columns:1fr}}
+  @media(max-width:640px){.cards{grid-template-columns:1fr}}
+  @media(max-width:560px){
+    .wrap{padding:0 18px}
+    header{padding:60px 0 44px}
+    section{padding:52px 0}
+    .contact{padding:68px 0}
+    .pill{display:none}
+    .nav-links{gap:12px}
+    .hero-cta .btn{flex:1;justify-content:center}
+    .sec-head{margin-bottom:28px;gap:10px}
+    .case{padding:24px}
+    .metric{padding:24px 20px}
+  }
+  @media(max-width:380px){.stack{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPXDSKP2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand">Oleksandr <b>Bashkev</b></div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact" class="pill"><span class="dot"></span>Open to work</a>
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle light / dark theme">
+        <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="hero-eyebrow reveal"><span class="tag">AI Automation &amp; Web Infrastructure Engineer</span></div>
+    <h1 class="reveal d1">One engineer.<br>The infrastructure<br>of a <em>team.</em></h1>
+    <p class="lede reveal d2">I design and operate <strong>AI-automated, multi-locale web platforms</strong> — LLM content pipelines, automated provisioning, and analytics that actually track correctly across every locale.</p>
+    <div class="hero-cta reveal d3">
+      <a href="#contact" class="btn btn-primary">Start a project →</a>
+      <a href="#work" class="btn btn-ghost">See the work</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag tag--muted">// 01</span><h2>Operating at production scale — solo</h2></div>
+    <div class="metrics reveal d1">
+      <div class="metric"><div class="num">43.5<span>K</span></div><div class="lbl">requests / day across 15 live domains</div></div>
+      <div class="metric"><div class="num">160<span>+</span></div><div class="lbl">countries served</div></div>
+      <div class="metric"><div class="num">1,000<span>+</span></div><div class="lbl">domains rebuilt from web archives</div></div>
+      <div class="metric"><div class="num">60–90</div><div class="lbl">sites provisioned / month, automated</div></div>
+    </div>
+    <div class="shots reveal d2">
+      <figure class="shot shot--img"><img src="./assets/cf-traffic.png" alt="Cloudflare network traffic by country"/><figcaption>Cloudflare · network traffic — 2.04M requests, 167 countries (30 days)</figcaption></figure>
+      <figure class="shot shot--img"><img src="./assets/cf-reliability.png" alt="Cloudflare security, cache and reliability"/><figcaption>Cloudflare · security, cache &amp; reliability — 0% 5xx error rate</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag tag--muted">// 02</span><h2>What I do</h2></div>
+    <div class="cards">
+      <div class="card reveal d1">
+        <span class="idx">A1</span>
+        <h3>AI Workflow Automation</h3>
+        <p>I turn manual, repetitive work into production LLM pipelines that run unattended — with guardrails and real error handling, not toy demos.</p>
+        <div class="kw"><span>Claude API</span><span>OpenAI</span><span>agentic pipelines</span><span>n8n</span><span>Python / JS</span></div>
+      </div>
+      <div class="card reveal d2">
+        <span class="idx">A2</span>
+        <h3>Multi-locale Web Infrastructure</h3>
+        <p>Next.js (App Router) at scale on Vercel, DNS/CDN via Cloudflare. Automated provisioning and config-driven deploys across 100+ markets.</p>
+        <div class="kw"><span>Next.js</span><span>Vercel</span><span>Cloudflare</span><span>TypeScript</span><span>automation</span></div>
+      </div>
+      <div class="card reveal d3">
+        <span class="idx">A3</span>
+        <h3>Analytics &amp; Technical SEO</h3>
+        <p>GTM/GA4 rollout across multi-locale networks: config-driven injection, GEO-correct container mapping, execution-level QA. hreflang / canonical / sitemap / robots done right. <em style="color:var(--accent)">This site is instrumented exactly this way.</em></p>
+        <div class="kw"><span>GTM</span><span>GA4</span><span>hreflang</span><span>YMYL / E-E-A-T</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag tag--muted">// 03</span><h2>Featured case</h2></div>
+    <div class="case reveal d1">
+      <span class="tag">Anonymized under NDA</span>
+      <h3>An automated content-infrastructure platform, run by one person</h3>
+      <div class="case-grid">
+        <div><h4>Challenge</h4><p>Rebuild and operate a large network of content sites — work that normally needs a small team — without it collapsing under manual overhead.</p></div>
+        <div><h4>What I built</h4><p>Automated provisioning (60–90 sites/mo), LLM content &amp; processing pipelines on the Claude API, Next.js builds on Vercel, DNS/CDN on Cloudflare, and a config-driven GTM/GA4 + technical-SEO layer across every locale.</p></div>
+        <div><h4>Result</h4><p>1,000+ domains rebuilt, 15 live properties serving ~43.5K requests/day to 160+ countries — maintained end-to-end by a single engineer.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag tag--muted">// 04</span><h2>Stack</h2></div>
+    <div class="stack">
+      <div class="stack-col reveal d1"><h4>AI &amp; Automation</h4><ul><li>Anthropic Claude API</li><li>OpenAI</li><li>Agentic pipelines</li><li>n8n</li><li>Python / JS scripting</li></ul></div>
+      <div class="stack-col reveal d2"><h4>Frontend</h4><ul><li>JavaScript / TypeScript</li><li>React</li><li>Next.js — App Router</li><li>HTML / CSS</li></ul></div>
+      <div class="stack-col reveal d3"><h4>Infrastructure</h4><ul><li>Vercel</li><li>Cloudflare (DNS / CDN)</li><li>Automated provisioning</li><li>Web-archive recovery</li></ul></div>
+      <div class="stack-col reveal d4"><h4>Analytics &amp; SEO</h4><ul><li>GTM / GA4 rollout</li><li>GEO-correct mapping</li><li>hreflang / canonical</li><li>sitemap / robots</li><li>YMYL / E-E-A-T</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag tag--muted">// 05</span><h2>About</h2></div>
+    <div class="about">
+      <div class="reveal d1">
+        <p>I'm <strong>Oleksandr</strong> — a front-end developer (5+ years) turned automation and infrastructure engineer.</p>
+        <p>Over the past year I've built and run a network of 1,000+ content sites largely on my own: automating provisioning, content pipelines on the Claude API, and the analytics &amp; SEO layer underneath. The interesting part isn't any single tool — it's that the whole thing runs as a <strong>system</strong>, maintained by one person at a scale that usually needs a team.</p>
+        <p>I work fully remote from Málaga, Spain, with comfortable overlap across UK/EU and US-morning hours.</p>
+      </div>
+      <div class="facts reveal d2">
+        <div class="row"><span class="k">BASED</span><span class="v">Málaga, Spain · Remote</span></div>
+        <div class="row"><span class="k">AVAILABLE</span><span class="v">Contract &amp; freelance · 10–20 h/wk</span></div>
+        <div class="row"><span class="k">EXPERIENCE</span><span class="v">5+ yrs front-end · 1+ yr infra</span></div>
+        <div class="row"><span class="k">LANGUAGES</span><span class="v">UA / RU native · EN fluent · ES basic</span></div>
+        <div class="row"><span class="k">TIMEZONE</span><span class="v">CET (UTC+1/+2)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="tag reveal">// Let's talk</span>
+    <h2 class="reveal d1">Have a workflow that<br>should <em>run itself?</em></h2>
+    <p class="lede reveal d2">Tell me what's eating your team's time. If it's repetitive and lives between an LLM and your stack, I can probably automate it.</p>
+    <div class="hero-cta reveal d3" style="justify-content:center">
+      <a href="mailto:bashkev88@gmail.com" class="btn btn-primary">bashkev88@gmail.com</a>
+      <a href="https://github.com/alexanderbashkev" target="_blank" rel="noopener" class="btn btn-ghost">GitHub →</a>
+    </div>
+    <p class="contact-meta reveal d3">Usually reply within a day</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>© 2026 Oleksandr Bashkev</span>
+    <span><a href="https://github.com/alexanderbashkev" target="_blank" rel="noopener">github.com/alexanderbashkev</a></span>
+  </div>
+</footer>
+
+<script>
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const root=document.documentElement;
+  document.getElementById('themeBtn').addEventListener('click',()=>{
+    const current=root.getAttribute('data-theme')
+      || (matchMedia('(prefers-color-scheme: light)').matches ? 'light':'dark');
+    const next=current==='light'?'dark':'light';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){}
+  });
+</script>
+</body>
+</html>
