@@ -141,6 +141,14 @@
   .card p{font-size:15px;color:var(--muted);line-height:1.6}
   .card .kw{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
   .kw span{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:4px 9px}
+  .card-link{display:inline-flex;align-items:center;gap:7px;margin-top:20px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:3px;transition:border-color .2s,filter .2s}
+  .card-link:hover{border-bottom-color:var(--accent);filter:brightness(1.1)}
+  .card-link:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:2px}
+
+  .sec-intro{font-size:17px;color:var(--muted);max-width:720px;line-height:1.6;margin:-16px 0 36px}
+  .card-links{display:flex;flex-direction:column;gap:10px;margin-top:20px;align-items:flex-start}
+  .card-links .card-link{margin-top:0}
+  .sec-close{margin:32px auto 0;max-width:640px;text-align:center;font-size:15px;color:var(--muted);line-height:1.55}
 
   .case{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:44px;position:relative;overflow:hidden}
   .case::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent)}
@@ -158,6 +166,10 @@
   .about{display:grid;grid-template-columns:1.4fr 1fr;gap:50px;align-items:start}
   .about p{font-size:17.5px;color:var(--muted);line-height:1.7;margin-bottom:18px}
   .about p strong{color:var(--text);font-weight:600}
+  .about-bio{display:flex;gap:24px;align-items:flex-start}
+  .about-portrait{width:180px;height:180px;border-radius:50%;object-fit:cover;border:1px solid var(--line-strong);flex-shrink:0;display:block;background:var(--panel)}
+  .about-copy{flex:1;min-width:0}
+  .about-copy p:last-child{margin-bottom:0}
   .facts{border:1px solid var(--line);border-radius:16px;background:var(--panel);overflow:hidden}
   .facts .row{display:flex;justify-content:space-between;gap:14px;padding:15px 22px;border-bottom:1px solid var(--line);font-size:14px}
   .facts .row:last-child{border-bottom:none}
@@ -186,6 +198,8 @@
   @media(max-width:760px){.nav-links a:not(.pill){display:none}.case{padding:30px}.case-grid{grid-template-columns:1fr;gap:22px}.shots{grid-template-columns:1fr}}
   @media(max-width:640px){.cards{grid-template-columns:1fr}}
   @media(max-width:560px){
+    .about-bio{flex-direction:column;align-items:center;gap:20px}
+    .about-portrait{width:140px;height:140px}
     .wrap{padding:0 18px}
     header{padding:60px 0 44px}
     section{padding:52px 0}
@@ -208,6 +222,8 @@
     <div class="brand">Oleksandr <b>Bashkev</b></div>
     <div class="nav-links">
       <a href="#work">Work</a>
+      <a href="#coast">Coast</a>
+      <a href="#demos">Demos</a>
       <a href="#services">Services</a>
       <a href="#stack">Stack</a>
       <a href="#contact" class="pill"><span class="dot"></span>Open to work</a>
@@ -247,9 +263,67 @@
   </div>
 </section>
 
+<section id="coast">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag tag--muted">// 02</span><h2>Built on the coast, for the businesses the coast runs on</h2></div>
+    <p class="sec-intro reveal d1">I'm based on the Costa del Sol and I build production automation for the businesses serving the international money moving here — real estate, relocation, the agencies behind them. Same timezone, English-native B2B, and working software you can click, not slideware.</p>
+    <div class="cards">
+      <div class="card reveal d1">
+        <span class="idx">F1</span>
+        <h3>For international real-estate agencies</h3>
+        <p>Selling Costa del Sol property to British, German and Scandinavian buyers means listings in every language, ranking in every market. I built an engine that does it in one pass — native copy for six markets with the SEO built in.</p>
+        <a class="card-link" href="https://polyhaus.bashkev.dev" target="_blank" rel="noopener" aria-label="See Polyhaus live demo (opens in new tab)">See it live · Polyhaus →</a>
+      </div>
+      <div class="card reveal d2">
+        <span class="idx">F2</span>
+        <h3>For relocation, property management &amp; concierge services</h3>
+        <p>Every enquiry from a relocating family is a lead you can't afford to drop. I build front desks that read, qualify and book inbound enquiries automatically — and chase the quiet ones until they convert.</p>
+        <div class="card-links">
+          <a class="card-link" href="https://reception.bashkev.dev" target="_blank" rel="noopener" aria-label="See Reception live demo (opens in new tab)">See it live · Reception →</a>
+          <a class="card-link" href="https://intake.bashkev.dev" target="_blank" rel="noopener" aria-label="See Intake live demo (opens in new tab)">See it live · Intake →</a>
+        </div>
+      </div>
+      <div class="card reveal d3">
+        <span class="idx">F3</span>
+        <h3>For local marketing &amp; web agencies</h3>
+        <p>You win the international client; I'm the reliable build partner behind the automation and web work — production-grade, owned end to end, handed over so it keeps running.</p>
+        <a class="card-link" href="#contact" aria-label="Get in touch about partner work">Let's talk →</a>
+      </div>
+    </div>
+    <p class="sec-close reveal d3">On the coast, on CET, working in English — happy to start with a small paid test task.</p>
+  </div>
+</section>
+
+<section id="demos">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tag tag--muted">// 03</span><h2>Live demos</h2></div>
+    <p class="sec-intro reveal d1">Production demos — real automation running live, not mockups. Each handles a real business problem end to end.</p>
+    <div class="cards">
+      <div class="card reveal d1">
+        <span class="idx">D1</span>
+        <h3>Polyhaus</h3>
+        <p>Turns one property into publish-ready listings for six markets — each written natively for its buyers (not translated), with SEO and structured data built in.</p>
+        <a class="card-link" href="https://polyhaus.bashkev.dev" target="_blank" rel="noopener" aria-label="View Polyhaus live demo (opens in new tab)">View live demo · Polyhaus →</a>
+      </div>
+      <div class="card reveal d2">
+        <span class="idx">D2</span>
+        <h3>Reception</h3>
+        <p>An AI front desk that turns an inbound enquiry into a qualified, booked appointment — triaging by urgency and handling it end to end, without a human in the loop.</p>
+        <a class="card-link" href="https://reception.bashkev.dev" target="_blank" rel="noopener" aria-label="View Reception live demo (opens in new tab)">View live demo · Reception →</a>
+      </div>
+      <div class="card reveal d3">
+        <span class="idx">D3</span>
+        <h3>Intake</h3>
+        <p>Reads, routes, and replies to incoming service requests, then chases the quiet ones until they convert — recovering leads that would otherwise go cold.</p>
+        <a class="card-link" href="https://intake.bashkev.dev" target="_blank" rel="noopener" aria-label="View Intake live demo (opens in new tab)">View live demo · Intake →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="services">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tag tag--muted">// 02</span><h2>What I do</h2></div>
+    <div class="sec-head reveal"><span class="tag tag--muted">// 04</span><h2>What I do</h2></div>
     <div class="cards">
       <div class="card reveal d1">
         <span class="idx">A1</span>
@@ -275,7 +349,7 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tag tag--muted">// 03</span><h2>Featured case</h2></div>
+    <div class="sec-head reveal"><span class="tag tag--muted">// 05</span><h2>Featured case</h2></div>
     <div class="case reveal d1">
       <span class="tag">Anonymized under NDA</span>
       <h3>An automated content-infrastructure platform, run by one person</h3>
@@ -290,7 +364,7 @@
 
 <section id="stack">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tag tag--muted">// 04</span><h2>Stack</h2></div>
+    <div class="sec-head reveal"><span class="tag tag--muted">// 06</span><h2>Stack</h2></div>
     <div class="stack">
       <div class="stack-col reveal d1"><h4>AI &amp; Automation</h4><ul><li>Anthropic Claude API</li><li>OpenAI</li><li>Agentic pipelines</li><li>n8n</li><li>Python / JS scripting</li></ul></div>
       <div class="stack-col reveal d2"><h4>Frontend</h4><ul><li>JavaScript / TypeScript</li><li>React</li><li>Next.js — App Router</li><li>HTML / CSS</li></ul></div>
@@ -302,16 +376,19 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tag tag--muted">// 05</span><h2>About</h2></div>
+    <div class="sec-head reveal"><span class="tag tag--muted">// 07</span><h2>About</h2></div>
     <div class="about">
-      <div class="reveal d1">
-        <p>I'm <strong>Oleksandr</strong> — a front-end developer (5+ years) turned automation and infrastructure engineer.</p>
-        <p>Over the past year I've built and run a network of 1,000+ content sites largely on my own: automating provisioning, content pipelines on the Claude API, and the analytics &amp; SEO layer underneath. The interesting part isn't any single tool — it's that the whole thing runs as a <strong>system</strong>, maintained by one person at a scale that usually needs a team.</p>
-        <p>I work fully remote from Málaga, Spain, with comfortable overlap across UK/EU and US-morning hours.</p>
+      <div class="about-bio reveal d1">
+        <img class="about-portrait" src="assets/alex-portrait.jpg" alt="Oleksandr (Alex) Bashkev" width="180" height="180" loading="lazy">
+        <div class="about-copy">
+          <p>I'm <strong>Oleksandr</strong> — a front-end developer (5+ years) turned automation and infrastructure engineer.</p>
+          <p>Over the past year I've built and run a network of 1,000+ content sites largely on my own: automating provisioning, content pipelines on the Claude API, and the analytics &amp; SEO layer underneath. The interesting part isn't any single tool — it's that the whole thing runs as a <strong>system</strong>, maintained by one person at a scale that usually needs a team.</p>
+          <p>I work fully remote from Málaga, Spain, with comfortable overlap across UK/EU and US-morning hours.</p>
+        </div>
       </div>
       <div class="facts reveal d2">
         <div class="row"><span class="k">BASED</span><span class="v">Málaga, Spain · Remote</span></div>
-        <div class="row"><span class="k">AVAILABLE</span><span class="v">Contract &amp; freelance · 10–20 h/wk</span></div>
+        <div class="row"><span class="k">AVAILABLE</span><span class="v">Contract &amp; freelance · 10–20 h/wk · open to a paid test task</span></div>
         <div class="row"><span class="k">EXPERIENCE</span><span class="v">5+ yrs front-end · 1+ yr infra</span></div>
         <div class="row"><span class="k">LANGUAGES</span><span class="v">UA / RU native · EN fluent · ES basic</span></div>
         <div class="row"><span class="k">TIMEZONE</span><span class="v">CET (UTC+1/+2)</span></div>
