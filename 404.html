@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>
+  try{
+    var t=localStorage.getItem('theme');
+    if(t)document.documentElement.setAttribute('data-theme',t);
+    var l=localStorage.getItem('lang');
+    if(l==='es'){
+      document.documentElement.lang='es';
+      document.documentElement.setAttribute('data-lang-swap','1');
+    }
+  }catch(e){}
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>404 — Page Not Found · Oleksandr Bashkev</title>
@@ -53,6 +63,8 @@
     }
   }
 
+  html[data-lang-swap] body{visibility:hidden}
+
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{height:100%}
   html{scroll-behavior:smooth}
@@ -70,23 +82,29 @@
 
   /* NAV — identical to homepage */
   nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--ink) 72%,transparent);border-bottom:1px solid var(--line)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.02em;display:flex;align-items:center;gap:9px}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;gap:14px}
+  .brand{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.02em;display:flex;align-items:center;gap:9px;flex-shrink:0}
   .brand a{color:inherit;text-decoration:none;display:inline-flex;gap:6px}
   .brand b{color:var(--accent)}
-  .nav-links{display:flex;gap:26px;align-items:center}
-  .nav-links a{color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:500;transition:color .2s}
+  .nav-links{display:flex;gap:22px;align-items:center;flex-wrap:nowrap}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:500;transition:color .2s;white-space:nowrap}
   .nav-links a:hover{color:var(--text)}
   .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--text);border:1px solid var(--line-strong);border-radius:100px;padding:7px 14px}
   .dot{width:8px;height:8px;border-radius:50%;background:var(--live);animation:pulse 2.4s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(95,209,122,.5)}70%{box-shadow:0 0 0 7px rgba(95,209,122,0)}100%{box-shadow:0 0 0 0 rgba(95,209,122,0)}}
-  .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line-strong);background:transparent;color:var(--text);cursor:pointer;transition:border-color .2s,color .2s}
-  .theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+  .icon-btn{display:inline-flex;align-items:center;justify-content:center;height:38px;border-radius:10px;border:1px solid var(--line-strong);background:transparent;color:var(--text);cursor:pointer;transition:border-color .2s,color .2s;flex-shrink:0}
+  .icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+  .theme-toggle{width:38px}
   .theme-toggle svg{width:18px;height:18px}
   .theme-toggle .ico-sun{display:none}
   html[data-theme="light"] .theme-toggle .ico-sun{display:block}
   html[data-theme="light"] .theme-toggle .ico-moon{display:none}
   @media (prefers-color-scheme: light){html:not([data-theme="dark"]) .theme-toggle .ico-sun{display:block}html:not([data-theme="dark"]) .theme-toggle .ico-moon{display:none}}
+  .lang-toggle{padding:0 12px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;font-weight:600;color:var(--muted);gap:2px}
+  .lang-toggle .lang-code{color:var(--muted);transition:color .2s}
+  .lang-toggle .lang-code.active{color:var(--accent)}
+  .lang-toggle .lang-sep{color:var(--muted-2);margin:0 4px}
+  .lang-toggle:hover{color:var(--text)}
 
   /* BUTTONS — identical to homepage */
   .btn{font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;padding:14px 26px;border-radius:10px;transition:transform .15s,filter .2s,border-color .2s,color .2s;display:inline-flex;align-items:center;gap:9px}
@@ -102,7 +120,7 @@
   .nf-code{font-family:var(--serif);font-weight:500;font-size:clamp(110px,22vw,220px);line-height:.92;letter-spacing:-.04em;margin:0 auto 8px;display:inline-block}
   .nf-code em{font-style:italic;color:var(--accent)}
   .nf-sub{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4vw,42px);letter-spacing:-.015em;margin:18px 0 22px;line-height:1.1}
-  .nf-lede{font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:540px;margin:0 auto 38px;line-height:1.55}
+  .nf-lede{font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:560px;margin:0 auto 38px;line-height:1.55}
   .nf-lede strong{color:var(--text);font-weight:600}
   .nf-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
@@ -113,11 +131,13 @@
   .foot-in a:hover{color:var(--accent)}
 
   /* RESPONSIVE — matches homepage breakpoints */
+  @media(max-width:1024px){.nav-links{gap:18px}}
   @media(max-width:760px){.nav-links a:not(.pill){display:none}}
   @media(max-width:560px){
     .wrap{padding:0 18px}
     .pill{display:none}
-    .nav-links{gap:12px}
+    .nav-links{gap:10px}
+    .lang-toggle{padding:0 10px}
     main.notfound{padding:48px 0 72px}
     .nf-cta .btn{flex:1;justify-content:center;min-width:160px}
   }
@@ -130,13 +150,18 @@
   <div class="wrap nav-in">
     <div class="brand"><a href="/">Oleksandr <b>Bashkev</b></a></div>
     <div class="nav-links">
-      <a href="/#work">Work</a>
-      <a href="/#coast">Coast</a>
-      <a href="/#demos">Demos</a>
-      <a href="/#services">Services</a>
-      <a href="/#stack">Stack</a>
-      <a href="/#contact" class="pill"><span class="dot"></span>Open to work</a>
-      <button class="theme-toggle" id="themeBtn" aria-label="Toggle light / dark theme">
+      <a href="/#work" data-i18n="navWork">Work</a>
+      <a href="/#coast" data-i18n="navCoast">Coast</a>
+      <a href="/#demos" data-i18n="navDemos">Demos</a>
+      <a href="/#services" data-i18n="navServices">Services</a>
+      <a href="/#stack" data-i18n="navStack">Stack</a>
+      <a href="/#contact" class="pill"><span class="dot"></span><span data-i18n="openToWork">Open to work</span></a>
+      <button class="icon-btn lang-toggle" id="langBtn" data-i18n-label="langToggleLabel" aria-label="Toggle language English / Spanish">
+        <span class="lang-code" data-lang="en">EN</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-code" data-lang="es">ES</span>
+      </button>
+      <button class="icon-btn theme-toggle" id="themeBtn" data-i18n-label="themeToggleLabel" aria-label="Toggle light / dark theme">
         <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8l1.8-1.8M18 6l1.8-1.8"/></svg>
       </button>
@@ -146,13 +171,13 @@
 
 <main class="notfound">
   <div class="wrap">
-    <div class="nf-eyebrow"><span class="tag">// Error</span></div>
+    <div class="nf-eyebrow"><span class="tag" data-i18n="eyebrow">// Error</span></div>
     <h1 class="nf-code">4<em>0</em>4</h1>
-    <h2 class="nf-sub">Page not found</h2>
-    <p class="nf-lede">The page you were looking for doesn't exist, was moved, or never lived here. Let's head back to <strong>firmer ground.</strong></p>
+    <h2 class="nf-sub" data-i18n="sub">Page not found</h2>
+    <p class="nf-lede" data-i18n-html="lede">The page you were looking for doesn't exist, was moved, or never lived here. Let's head back to <strong>firmer ground.</strong></p>
     <div class="nf-cta">
-      <a href="/" class="btn btn-primary">← Back to homepage</a>
-      <a href="/#contact" class="btn btn-ghost">Get in touch</a>
+      <a href="/" class="btn btn-primary" data-i18n="ctaHome">← Back home</a>
+      <a href="/#contact" class="btn btn-ghost" data-i18n="ctaContact">Get in touch</a>
     </div>
   </div>
 </main>
@@ -165,13 +190,94 @@
 </footer>
 
 <script>
+  /* standalone i18n — no dependency on index.html */
+  const STR = {
+    en: {
+      title: "404 — Page Not Found · Oleksandr Bashkev",
+      desc: "The page you were looking for doesn't exist.",
+      navWork: "Work",
+      navCoast: "Coast",
+      navDemos: "Demos",
+      navServices: "Services",
+      navStack: "Stack",
+      openToWork: "Open to work",
+      eyebrow: "// Error",
+      sub: "Page not found",
+      lede: "The page you were looking for doesn't exist, was moved, or never lived here. Let's head back to <strong>firmer ground.</strong>",
+      ctaHome: "← Back home",
+      ctaContact: "Get in touch",
+      themeToggleLabel: "Toggle light / dark theme",
+      langToggleLabel: "Switch language English / Spanish"
+    },
+    es: {
+      title: "404 — Página no encontrada · Oleksandr Bashkev",
+      desc: "La página que buscabas no existe.",
+      navWork: "Proyectos",
+      navCoast: "Costa",
+      navDemos: "Demos",
+      navServices: "Servicios",
+      navStack: "Stack",
+      openToWork: "Disponible",
+      eyebrow: "// Error",
+      sub: "Página no encontrada",
+      lede: "La página que buscabas no existe, se ha movido o nunca vivió aquí. Volvamos a <strong>terreno firme.</strong>",
+      ctaHome: "← Volver al inicio",
+      ctaContact: "Contacto",
+      themeToggleLabel: "Cambiar tema claro / oscuro",
+      langToggleLabel: "Cambiar idioma inglés / español"
+    }
+  };
+
   const root=document.documentElement;
+
+  /* theme toggle */
   document.getElementById('themeBtn').addEventListener('click',()=>{
     const current=root.getAttribute('data-theme')
       || (matchMedia('(prefers-color-scheme: light)').matches ? 'light':'dark');
     const next=current==='light'?'dark':'light';
     root.setAttribute('data-theme',next);
     try{localStorage.setItem('theme',next)}catch(e){}
+  });
+
+  /* language toggle */
+  const langBtn=document.getElementById('langBtn');
+
+  function applyLang(lang){
+    if(!STR[lang]) lang='en';
+    const dict=STR[lang];
+    root.lang=lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const k=el.getAttribute('data-i18n');
+      if(dict[k]!==undefined) el.textContent=dict[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+      const k=el.getAttribute('data-i18n-html');
+      if(dict[k]!==undefined) el.innerHTML=dict[k];
+    });
+    document.querySelectorAll('[data-i18n-label]').forEach(el=>{
+      const k=el.getAttribute('data-i18n-label');
+      if(dict[k]!==undefined) el.setAttribute('aria-label',dict[k]);
+    });
+
+    if(dict.title) document.title=dict.title;
+    const md=document.querySelector('meta[name="description"]');
+    if(md&&dict.desc) md.setAttribute('content',dict.desc);
+
+    langBtn.querySelectorAll('.lang-code').forEach(sp=>{
+      sp.classList.toggle('active', sp.getAttribute('data-lang')===lang);
+    });
+
+    try{localStorage.setItem('lang',lang)}catch(e){}
+    root.removeAttribute('data-lang-swap');
+  }
+
+  const savedLang=(function(){try{return localStorage.getItem('lang')}catch(e){return null}})()||'en';
+  applyLang(savedLang);
+
+  langBtn.addEventListener('click',()=>{
+    const cur=root.lang==='es'?'es':'en';
+    applyLang(cur==='en'?'es':'en');
   });
 </script>
 </body>
